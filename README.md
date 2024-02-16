@@ -2,6 +2,9 @@
 Working on updating my site and converting what I had worked on for an XML RSS feed into a more current JSON feed within a Kirby CMS controller file.
 https://github.com/getkirby
 
+my redesigned site will launch soon in 2024 and will feature the json formatted feed. 
+https://lukedorny.com
+
 Since you're here you should browse the available elements in the  https://www.jsonfeed.org/version/1.1/ made by Manton Reese and Brent Simmons. Maybe there are a few elements you could add to this that I haven't. It looks much more flexible than the XML feed format. 
 
 ## Setup
