@@ -1,0 +1,16 @@
+title: Feed
+fields:
+  title:
+    label: Title
+    type: text
+  description:
+    label: Description
+    type: textarea
+  sections:
+    label: Sections to include in the feed
+    type: pages
+    query: site.children
+  rssblip:
+    label: RSS Blip
+    type: textarea
+    help: 'gets included with the rss feed after each item text'
