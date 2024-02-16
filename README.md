@@ -2,6 +2,8 @@
 Working on updating my site and converting what I had worked on for an XML RSS feed into a more current JSON feed within a Kirby CMS controller file.
 https://github.com/getkirby
 
+Since you're here you should browse the available elements in the  https://www.jsonfeed.org/version/1.1/ made by Manton Reese and Brent Simmons. Maybe there are a few elements you could add to this that I haven't. It looks much more flexible than the XML feed format. 
+
 ## Setup
 I created a few files to make this work:
 - `/site/templates/feed.json.php`
@@ -37,3 +39,4 @@ If you have suggestions to make this better please fork it, change it, whatever 
 
 
 — Luke
+
