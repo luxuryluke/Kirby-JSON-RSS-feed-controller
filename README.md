@@ -5,7 +5,9 @@ Working on updating my site and converting what I had worked on for an XML RSS f
 I created a few files to make this work:
 - /site/templates/feed.json.php
 - /site/blueprints/feed.json.yml
+- /site/controllers/feed.json.php
 - /content/feed/feed.json.txt
+  
 ## Edit these files
 - /site/config/config.php
 
