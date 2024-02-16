@@ -2,10 +2,22 @@
 Working on updating my site and converting what I had worked on for an XML RSS feed into a more current JSON feed within a Kirby CMS controller file.
 https://github.com/getkirby
 
-my redesigned site will launch soon in 2024 and will feature the json formatted feed. 
+my redesigned site will launch soon in 2024 and will feature the JSON formatted feed. 
 https://lukedorny.com
 
+## JSON Feed
 Since you're here you should browse the available elements in the  [jsonfeed.org](https://www.jsonfeed.org/version/1.1/) made by Manton Reese and Brent Simmons. Maybe there are a few elements you could add to this that I haven't. It looks much more flexible than the XML feed format. 
+
+Remember, we are now serving `application/feed+json` and the JSON feed format is `'version' => 'https://jsonfeed.org/version/1.1'`, also, the URL for the feed link in your header should use this PHP code:
+```PHP
+<link rel="alternate" type="application/feed+json" title="<?= $site->title()->esc() ?>" h
+  ref="<?= $site->rssfeed()->toPage()->url() ?>"  />
+```
+Of course, if you'd just like to link to your feed page directly, bypassing my silly panel page chooser for the feed, your header should use this more normal PHP code:
+```PHP
+<link rel="alternate" type="application/feed+json" title="<?= $site->title()->esc() ?>"
+  href="<?= page('feed')->url() ?>"  />
+```
 
 ## Setup
 I created a few files to make this work:
@@ -27,11 +39,11 @@ This setup assumes several content folders of pages to round up for the Feed.
 6. Next the controller file. This grabs the sections we want to include, sorts them, and grabs post images that use the typical Kirby `cover` image method but falls back to the first image available in each post.
 7. Then the controller creates the $items array for the feed. This is an array of all of your site pages that will be included.
 8. Then it takes the `cover` image and wraps it in a `figure`, adds `alt` text, a `figcaption` that allows links using the `->kirbytext()` powers, etc.
-9. In the new `$content_html` object it first adds in the page's text content and strips out extra new lines code.
+9. In the new `$content_html` object it first adds in the page's text content and strips out extra new lines of code.
 10. Then it adds the `cover` to the beginning of that new `$content_html`.
 11. You can add in other field data you may have for your pages, here I have added `$materials` at the end, for a project I'm doing that I'll soon launch on the site.
-12. It also adds in the `rssblip` at the end too, which has four `----` in the textarea to give it a divider from the item's content
-13. I actually added in the title of each item's parent to differentiate it from other posts, too (i.e.: "Articles: ", "Updates: ", etc.)
+12. It also adds in the `rssblip` at the end, which has four `----` in the textarea to give it a divider from the item's content below it
+13. I added the title of each item's parent to differentiate it from other posts, too (i.e.: "Articles: ", "Updates: ", etc.)
 14. Then it assembles the `$items` using the various objects we've created as well as fields from each page.
 15. Returns the `$items` for use.
 16. You'll see all of the data come together in the template.
