@@ -1,16 +1,21 @@
 title: Feed
 fields:
-  title:
-    label: Title
-    type: text
+  information:
+    type: info
+    text: >
+      This is a feed page. It will generate an **RSS** feed in **json** format of the sections you select.
+      The feed will be available at {{ site.url }}/feed.rss
   description:
     label: Description
     type: textarea
+    help: The Feed Description
+    width: 2/3
   sections:
     label: Sections to include in the feed
     type: pages
     query: site.children
+    width: 1/3
   rssblip:
     label: RSS Blip
     type: textarea
-    help: 'gets included with the rss feed after each item text'
+    help: Gets included with the rss feed after each item text
