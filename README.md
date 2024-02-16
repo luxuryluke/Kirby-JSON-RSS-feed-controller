@@ -6,6 +6,8 @@ I created a few files to make this work:
 - /site/templates/feed.json.php
 - /site/blueprints/feed.json.yml
 - /content/feed/feed.json.txt
+## Edit these files
+- /site/config/config.php
 
 ## Steps
 This setup assumes several content folders of pages to round up for the Feed. 
