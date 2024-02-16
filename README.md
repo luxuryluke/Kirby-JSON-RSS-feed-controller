@@ -1,12 +1,13 @@
 # jsonfeed-controller
 Working on updating my site and converting what I had worked on for an XML RSS feed into a more current JSON feed within a Kirby CMS controller file.
+https://github.com/getkirby
 
 ## Setup
 I created a few files to make this work:
-- /site/templates/feed.json.php
-- /site/blueprints/feed.json.yml
-- /site/controllers/feed.json.php
-- /content/feed/feed.json.txt
+- `/site/templates/feed.json.php`
+- `/site/blueprints/feed.json.yml`
+- `/site/controllers/feed.json.php`
+- `/content/feed/feed.json.txt`
   
 ## Edit these files
 - /site/config/config.php
@@ -25,10 +26,14 @@ This setup assumes several content folders of pages to round up for the Feed.
 10. Then it adds the `cover` to the beginning of that new `$content_html`.
 11. You can add in other field data you may have for your pages, here I have added `$materials` at the end, for a project I'm doing that I'll soon launch on the site.
 12. It also adds in the `rssblip` at the end too, which has four `----` in the textarea to give it a divider from the item's content
-13. Then it assembles the `$items` using the various objects we've created as well as fields from each page.
-14. Returns the `$items` for use.
-15. You'll see all of the data come together in the template.
+13. I actually added in the title of each item's parent to differentiate it from other posts, too (i.e.: "Articles: ", "Updates: ", etc.)
+14. Then it assembles the `$items` using the various objects we've created as well as fields from each page.
+15. Returns the `$items` for use.
+16. You'll see all of the data come together in the template.
 
 If you have suggestions to make this better please fork it, change it, whatever you like. Cheers!
+
+<img width="296" alt="image" src="https://github.com/luxuryluke/jsonfeed-controller/assets/57873/962cf208-2d94-461a-8632-26f22261b33c">
+
 
 — Luke
