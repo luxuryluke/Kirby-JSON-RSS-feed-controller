@@ -23,9 +23,11 @@ return [
 
     'routes' => [
         [
-            'pattern' => 'feed.json',
+            'pattern' => 'feed',
             'action'  => function() {
-                return page('feed')->render(['template' => 'feed.json']);
+                $data = page('feed')->render(['template' => 'feed.json']);
+                $response = new Kirby\Http\Response($data, 'application/feed+json');
+                return $response;
             }
         ],
     ],
