@@ -10,12 +10,14 @@ Since you're here you should browse the available elements in the  [jsonfeed.org
 
 Remember, we are now serving `application/feed+json` and the JSON feed format is `'version' => 'https://jsonfeed.org/version/1.1'`, also, the URL for the feed link in your header should use this PHP code:
 ```PHP
-<link rel="alternate" type="application/feed+json" title="<?= $site->title()->esc() ?>" h
-  ref="<?= $site->rssfeed()->toPage()->url() ?>"  />
+<link rel="alternate" type="application/feed+json"
+  title="<?= $site->title()->esc() ?>"
+  href="<?= $site->rssfeed()->toPage()->url() ?>"  />
 ```
 Of course, if you'd just like to link to your feed page directly, bypassing my silly panel page chooser for the feed, your header should use this more normal PHP code:
 ```PHP
-<link rel="alternate" type="application/feed+json" title="<?= $site->title()->esc() ?>"
+<link rel="alternate" type="application/feed+json"
+  title="<?= $site->title()->esc() ?>"
   href="<?= page('feed')->url() ?>"  />
 ```
 
