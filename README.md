@@ -5,7 +5,7 @@ https://github.com/getkirby
 my redesigned site will launch soon in 2024 and will feature the json formatted feed. 
 https://lukedorny.com
 
-Since you're here you should browse the available elements in the  https://www.jsonfeed.org/version/1.1/ made by Manton Reese and Brent Simmons. Maybe there are a few elements you could add to this that I haven't. It looks much more flexible than the XML feed format. 
+Since you're here you should browse the available elements in the  [jsonfeed.org](https://www.jsonfeed.org/version/1.1/) made by Manton Reese and Brent Simmons. Maybe there are a few elements you could add to this that I haven't. It looks much more flexible than the XML feed format. 
 
 ## Setup
 I created a few files to make this work:
@@ -17,7 +17,7 @@ I created a few files to make this work:
 ## Edit these files
 - /site/config/config.php
 
-## Steps
+## Steps & Walkthrough of Code
 This setup assumes several content folders of pages to round up for the Feed. 
 1. In my case, I added a `Pages` field in the `/site/blueprints/site.yml`  file to choose what page in my site would be the RSS feed. This might seem extra, but it works for my needs.
 2. Then in the second file above (`/site/blueprints/feed.json.yml`), I added a `Pages` field so I could select which content parents that have children I wanted to include in my feed. For example, I added `/content/articles/`, `/content/updates/`, `/content/nowplaying/` so that each of their children will get into the feed.
@@ -40,6 +40,7 @@ If you have suggestions to make this better please fork it, change it, whatever 
 
 <img width="296" alt="image" src="https://github.com/luxuryluke/jsonfeed-controller/assets/57873/962cf208-2d94-461a-8632-26f22261b33c">
 
-
 — Luke
 
+## Compatibility
+This was built and working within a Kirby v4.+ install.
